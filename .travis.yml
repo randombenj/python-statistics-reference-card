@@ -1,6 +1,11 @@
 dist: trusty
 language: tex
 sudo: false
+python: 
+  -"3.7"
+
+install:
+  - pip install --user Pygments
 
 addons:
     apt: 
