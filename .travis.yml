@@ -17,7 +17,7 @@ script:
 deploy:
   provider: releases
   api_key: $GIT_AUTH
-  file: "reference-card.pdf"
+  file: "STAT_Python_Referenzkarte.pdf"
   skip_cleanup: true
   on:
     tags: true
