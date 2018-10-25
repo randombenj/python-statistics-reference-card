@@ -1,0 +1,16 @@
+dist: trusty
+language: tex
+sudo: false
+
+addons:
+    apt: 
+        packages:
+          - texlive-full
+script:
+  - pdflatex -interaction=nonstopmode -halt-on-error *.tex --shell-escape
+
+deploy:
+  provider: releases
+  api_key: $GIT_AUTH
+  file: "reference-card.pdf"
+skip_cleanup: true
