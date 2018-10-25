@@ -6,13 +6,17 @@ python:
 
 install:
   - pip install --user Pygments
+  - curl https://raw.githubusercontent.com/gvacaliuc/travis-ci-latex-pdf/master/texlive_install.sh > /tmp/texlive_install.sh
+  - source /tmp/texlive_install.sh
+  - tlmgr install minted lipsum upquote lineno ifplatform xstring framed tcolorbox environ trimspaces
 
-addons:
-    apt: 
-        packages:
-          - texlive-full
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+
 script:
-  - pdflatex -interaction=nonstopmode -halt-on-error -shell-escape *.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -shell-escape *.tex
 
 deploy:
   provider: releases
