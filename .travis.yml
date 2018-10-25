@@ -8,7 +8,7 @@ install:
   - pip install --user Pygments
   - curl https://raw.githubusercontent.com/gvacaliuc/travis-ci-latex-pdf/master/texlive_install.sh > /tmp/texlive_install.sh
   - source /tmp/texlive_install.sh
-  - tlmgr install minted lipsum upquote lineno ifplatform xstring framed tcolorbox environ trimspaces
+  - tlmgr install minted lipsum upquote lineno ifplatform xstring framed tcolorbox environ trimspaces fvextra
 
 cache:
   directories:
