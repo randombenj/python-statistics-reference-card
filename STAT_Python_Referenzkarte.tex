@@ -356,9 +356,14 @@ wenn $n=13$, $\sigma=0.024$ und $u=80.02$ \\
 99\% Vertrauensintervall falls $X \sim \mathcal{N}(31, 6 / \sqrt{10})$
 
 \subsection*{Statistische Tests}
-\pythoninline{st.binom_test(x=3, n=5, p=0.5)} \\
-Vorzeichentest mit \textit{x} Erfolge bei \textit{n} Versuchen \\
-und einer Erfolgswahrscheinlichkeit von 50\%  \\ 
+\pythoninline{st.binom_test(x=3, n=5, p=0.5,} \\
+\pythoninline{	alternative='two-sided')}\\
+Vorzeichentest mit \textit{x} Erfolge bei \textit{n} Versuchen
+und einer Erfolgswahrscheinlichkeit von 50\%
+\vspace{1em} \\
+alternative : \{'two-sided', 'greater', 'less'\}, \textbf{optional}\\
+Angabe der Alternativhypothese. Der Standardwert ist 'two-sided'.\\
+
 
 \pythoninline{st.wilcoxon(arr, correction=True)} \\
 Wilcoxon-Test \\
