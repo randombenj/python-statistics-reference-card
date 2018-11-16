@@ -380,7 +380,8 @@ Statistischer Test für gepaarte Stichproben  \\
 \pythoninline{st.ttest_ind(series1, series2, equal_var=False)} \\
 Statistischer Test für ungepaarte Stichproben  \\
 
-\pythoninline{st.mannwhitneyu(series1, series2)} \\
+\pythoninline{st.mannwhitneyu(series1, series2,}\\
+\pythoninline{	alternative='two-sided')} \\
 Mann-Whitney U-Test (aka Wilcoxon Rank-sum Test) \\
 
 \pythoninline{st.ttest_1samp(series, 1).pvalue} \\
