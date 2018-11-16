@@ -4,6 +4,6 @@
 
 # Reference Card for Statistics with Python
 
-Python reference cards for statistics with Pandas and Numpy. Created by @chefe for the Module STAT at HSLU Switzerland.
+Python reference cards for statistics with Pandas and Numpy. Created by [@chefe](https://github.com/chefe/) for the Module STAT at HSLU Switzerland.
 
 [Download latest release](https://github.com/KilnOfTheSecondFlame/python_statistics_reference_card/releases/latest/)
