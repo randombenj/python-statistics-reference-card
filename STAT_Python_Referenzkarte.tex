@@ -365,8 +365,14 @@ alternative : \{'two-sided', 'greater', 'less'\}, \textbf{optional}\\
 Angabe der Alternativhypothese. Der Standardwert ist 'two-sided'.\\
 
 
-\pythoninline{st.wilcoxon(arr, correction=True)} \\
+\pythoninline{st.wilcoxon(arr, zero_method="wilcox",}\\
+\pythoninline{	correction=True)} \\
 Wilcoxon-Test \\
+zero\_method : \{"pratt", "wilcox", "zsplit"\}, \textbf{optional}\\
+"wilcox": Wilcox treatment: discards all zero-differences \\
+\pythoninline{st.wilcoxon(arr, zero_method="wilcox",}\\
+\pythoninline{	correction=True).pvalue} \\
+Auf den p-Value des Wilcoxontests zugreifen\\
 
 \pythoninline{st.ttest_rel(series1, series2)} \\
 Statistischer Test für gepaarte Stichproben  \\
