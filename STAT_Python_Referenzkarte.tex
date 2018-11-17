@@ -328,9 +328,9 @@ $P(X \leq 1.5)$ falls $X \sim \mathcal{N}(0, 1^2)$
 
 \subsubsection*{T Verteilung}
 
-\pythoninline{st.t.cdf(x=168, df=148, loc=164, } \\
+\pythoninline{st.t.cdf(x=168, df=149, loc=164, } \\
 \pythoninline{	scale=10/np.sqrt(150))} \\
-$P[\overline{X}_{150} \leq 168]$ falls $u = 164$, $\hat{o} = 10$ und $T \sim t_{149}$ \\
+$P[\overline{X}_{150} \leq 168]$ falls $u = 164$, $\hat{o} = 10$ und $T \sim t_{149}$ (150 Messungen - 1 geschätzter Parameter) \\
 
 \pythoninline{st.t.ppf(0.05, df=v)} \\
 Quantile einer T-Verteilung mit \textit{v} Freiheitsgrade
@@ -503,7 +503,7 @@ BoxCox-Funktion definieren \\
 
 \begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{verbatim}
-TravelDate  Passengers
+    TravelDate  Passengers
 0   1/1/1949         112
 1   2/1/1949         118
 2   3/1/1949         132
