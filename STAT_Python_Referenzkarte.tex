@@ -205,27 +205,12 @@ Daten anhand des Wertes einer Spalte filtern
 Daten anhand des Wertes einer Spalte filtern und die \\
 Zeilen einschränken (in diesem Beispiel 2 bis 5)
 
-\vspace{1em}
-
-\subsection*{Mehrer Pandas DF Plots in einem MatPlotLib}
-
-\begin{python}
-plt.figure(1)
-plt.subplot(1,3,1)
-iron.low.plot(kind='box')
-plt.subplot(1,3,2)
-iron.medium.plot(kind='box', ax=plt.gca())
-plt.subplot(1,3,3)
-iron.high.plot(kind='box', ax=plt.gca())
-plt.tight_layout()
-plt.show()
-\end{python}
-
 \subsection*{Matplotlib PyPlot}
 \pythoninline{plt.title("...")}: Titel des Plots festlegen \\
 \pythoninline{plt.xlabel("...")}: X-Achsenbeschriftung festlegen \\
 \pythoninline{plt.ylabel("...")}: Y-Achsenbeschriftung festlegen \\
 \pythoninline{plt.show()}: Plot anzeigen \\
+\pythoninline{plt.tight_layout()}: vermeiden, dass Beschriftungen in Diagrammen enden \\
 
 \pythoninline{plt.subplot(nrows=2, ncols=3, index=4)} \\
 \pythoninline{plt.subplot(234)} \\
@@ -271,6 +256,30 @@ einem Polynom ersten Grades angeglichen wurden \\
 
 \pythoninline{st.probplot(arr, plot=plt)} \\
 QQ-Plot anhand einer Normalverteilung
+
+\subsection*{Mehrere DataFrame Plots in einem MatPlotLib}
+
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{Struktur der Daten für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+	\begin{verbatim}
+	"high" "medium" "low"
+	0.71 2.2 2.25
+	1.66 2.93 3.93
+	2.01 3.08 5.08
+	...
+	\end{verbatim}
+\end{tcolorbox}
+
+\begin{python}
+plt.figure(1)
+plt.subplot(1,3,1)
+iron.low.plot(kind='box')
+plt.subplot(1,3,2)
+iron.medium.plot(kind='box', ax=plt.gca())
+plt.subplot(1,3,3)
+iron.high.plot(kind='box', ax=plt.gca())
+plt.tight_layout()
+plt.show()
+\end{python}
 
 \subsection*{Verteilungen}
 \pythoninline{cdf}: Kumulative Verteilungsfunktion $P(X \leq x)$ \\
