@@ -26,8 +26,6 @@
 \newminted[python]{python}{}
 \newmintinline{python}{breaklines,tabsize=2}
 
-\tcbset{boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black}
-
 \begin{document}
 \begin{multicols*}{3}
 
@@ -286,7 +284,7 @@ $P(X = 2)$ falls $X \sim Pois(1.5)$ \\
 
 \pythoninline{st.uniform.cdf(x=1, loc=4, scale=5)} \\
 $P(X \leq 1)$ falls $X \sim Unif(4, 9)$ \\
-\textbf{!} \textit{scale} ist nicht Endwert, sondern Länge des Intervall \\
+\colorbox{red!20!white}{\pythoninline{scale} ist nicht Endwert, sondern Länge des Intervall}\\
 
 \pythoninline{st.uniform.pdf(x=1, loc=0, scale=7)} \\
 Dichte an der Stelle \textit{x} = 1 falls $X \sim Unif(0, 7)$ \\
@@ -296,7 +294,7 @@ uniform verteilte Zufallszahlen, $X_i \sim Unif(0, 7)$ \\
 
 \pythoninline{st.expon.cdf(x=4, loc=0, scale=1/3)} \\
 $P(X \leq 4)$ falls $X \sim e^{3}$ \\
-\textbf{!} \textit{scale} muss mit $1 / \lambda$ angegeben werden \\
+\colorbox{red!20!white}{\pythoninline{scale} muss mit $\frac{1}{\lambda}$ angegeben werden}\\
 
 \pythoninline{st.expon.pdf(x=1, loc=0, scale=1/3)} \\
 Dichte an der Stelle \textit{x} = 1 falls $X \sim e^{3}$ \\
@@ -360,16 +358,17 @@ wenn $n=13$, $\sigma=0.024$ und $u=80.02$ \\
 \pythoninline{	alternative='two-sided')}\\
 Vorzeichentest mit \textit{x} Erfolge bei \textit{n} Versuchen
 und einer Erfolgswahrscheinlichkeit von 50\%
-\vspace{1em} \\
-alternative : \{'two-sided', 'greater', 'less'\}, \textbf{optional}\\
+\vspace{0.5em}\\
+\pythoninline{alternative} : \{'two-sided', 'greater', 'less'\}, \textbf{optional}\\
 Angabe der Alternativhypothese. Der Standardwert ist 'two-sided'.\\
 
-
+\subsubsection*{Wilcoxon-Test}
 \pythoninline{st.wilcoxon(arr, zero_method="wilcox",}\\
-\pythoninline{	correction=True)} \\
-Wilcoxon-Test \\
-zero\_method : \{"pratt", "wilcox", "zsplit"\}, \textbf{optional}\\
-"wilcox": Wilcox treatment: discards all zero-differences \\
+\pythoninline{	correction=True)}
+\vspace{0.5em}\\
+\pythoninline{zero_method} : \{"pratt", "wilcox", "zsplit"\}, \textbf{optional}\\
+"wilcox": Wilcox treatment: discards all zero-differences
+\vspace{0.5em}\\
 \pythoninline{st.wilcoxon(arr, zero_method="wilcox",}\\
 \pythoninline{	correction=True).pvalue} \\
 Auf den p-Value des Wilcoxontests zugreifen\\
@@ -387,7 +386,7 @@ Mann-Whitney U-Test (aka Wilcoxon Rank-sum Test) \\
 \pythoninline{st.ttest_1samp(series, 1).pvalue} \\
 P-Wert eines T-Tests für eine Series berechnen \\
 mit der Nullhypothese $u=1$ \\
-\textbf{!} \textit{pvalue} ist der P-Wert des zweiseitigen Tests
+\colorbox{red!20!white}{\pythoninline{pvalue} ist der P-Wert des zweiseitigen Tests}\\
 
 \subsection*{Varianzanalyse}
 \pythoninline{from statsmodels.graphics.factorplots} \\
@@ -413,9 +412,9 @@ F-Statistik plotten \\
 \pythoninline{sns.boxplot(series.index.year, series)} \\
 Boxplot für gruppierte Daten nach Wochentag, Monat, \\
 Quartal, Jahr, ... anzeigen \\
-\textbf{!} \textit{series} muss ein DatetimeIndex haben  \\
+\colorbox{red!20!white}{\pythoninline{series} muss ein DatetimeIndex haben}\\
 
-\begin{tcolorbox}
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{python}
 frame = pd.DataFrame({
   "Treatment": np.repeat(["Vak","CO2"], 3),
@@ -436,7 +435,7 @@ Vertrauensintervalle für Gruppenmittelwerte \\
 \pythoninline{anova_lm(fit)} \\
 Anova Tabelle berechnen
 
-\begin{tcolorbox}
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{python}
 frame = pd.DataFrame({
   "Batch": np.tile(["1", "2", "3"], 4),
@@ -458,7 +457,7 @@ Interaktionsplot erstellen \\
 Zweiweg-Varianzanalyse mit Blöcken zwischen den \\
 Datenspalten \textit{Methode} und \textit{Batch} \\
 
-\begin{tcolorbox}
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{python}
 frame = pd.DataFrame({
   "Konz": np.repeat(["A", "B", "C","D"], 6),
@@ -483,7 +482,7 @@ Benötigte Bibliotheksfunktionen für Zeitreihen \\
 \pythoninline{		else (x**lambd - 1) / lambd} \\
 BoxCox-Funktion definieren \\
 
-\begin{tcolorbox}
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{verbatim}
 TravelDate  Passengers
 0   1/1/1949         112
