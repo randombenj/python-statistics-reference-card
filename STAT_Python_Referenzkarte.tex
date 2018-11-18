@@ -255,7 +255,11 @@ Plotten einer Regressionsgerade, bei welcher die Daten \\
 einem Polynom ersten Grades angeglichen wurden \\
 
 \pythoninline{st.probplot(arr, plot=plt)} \\
-QQ-Plot anhand einer Normalverteilung
+QQ-Plot anhand einer Normalverteilung\\
+
+\pythoninline{t = np.arange(start, stop, step)}\\
+\pythoninline{plt.plot(t, f(t), linewidth=1.0)}\\
+Kurve der Funktion f(t) im Intervall [\pythoninline{start,stop}] plotten
 
 \subsection*{Mehrere DataFrame Plots in einem MatPlotLib}
 
