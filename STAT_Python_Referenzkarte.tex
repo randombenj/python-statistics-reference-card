@@ -205,17 +205,17 @@ Daten anhand des Wertes einer Spalte filtern
 Daten anhand des Wertes einer Spalte filtern und die \\
 Zeilen einschränken (in diesem Beispiel 2 bis 5)
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{Struktur des DataFrames}},colframe=black!4!white,coltitle=black]
-	\begin{verbatim}
-		df=DataFrame({
-		  "Behandlung": np.repeat(
-		    ["A", "B", "C", "D"],
-		    [4, 6, 6, 8]
-			),
-		  "Koagulationszeit":
-		    [62, 60, 63, 59, 63, 67, 71, ...]
-		})
-	\end{verbatim}
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+	\begin{python}
+df=DataFrame({
+  "Behandlung": np.repeat(
+    ["A", "B", "C", "D"],
+    [4, 6, 6, 8]
+  ),
+  "Koagulationszeit":
+    [62, 60, 63, 59, 63, 67, 71, ...]
+})
+	\end{python}
 \end{tcolorbox}
 
 \pythoninline{df_group = df.groupby('Behandlung')} \\
