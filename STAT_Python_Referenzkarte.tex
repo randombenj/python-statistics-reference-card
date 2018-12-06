@@ -205,6 +205,26 @@ Daten anhand des Wertes einer Spalte filtern
 Daten anhand des Wertes einer Spalte filtern und die \\
 Zeilen einschränken (in diesem Beispiel 2 bis 5)
 
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{Struktur des DataFrames}},colframe=black!4!white,coltitle=black]
+	\begin{verbatim}
+		df=DataFrame({
+		  "Behandlung": np.repeat(
+		    ["A", "B", "C", "D"],
+		    [4, 6, 6, 8]
+			),
+		  "Koagulationszeit":
+		    [62, 60, 63, 59, 63, 67, 71, ...]
+		})
+	\end{verbatim}
+\end{tcolorbox}
+
+\pythoninline{df_group = df.groupby('Behandlung')} \\
+DataFrame nach Spaltenwerte gruppieren\\
+\pythoninline{df_group.get_group('A')} \\
+Auf gleiche Gruppe zugreifen\\
+\pythoninline{df_group.get_group('A')['Koagulationszeit']}\\
+Auf die Werte der Gruppe zugreifen
+
 \subsection*{Matplotlib PyPlot}
 \pythoninline{plt.title("...")}: Titel des Plots festlegen \\
 \pythoninline{plt.xlabel("...")}: X-Achsenbeschriftung festlegen \\
@@ -493,7 +513,11 @@ frame = pd.DataFrame({
 \pythoninline{formula = "Y ~ C(Konz, Sum) * C(Temp, Sum)"} \\
 \pythoninline{fit = ols(formula, data=frame).fit()} \\
 Faktorielle Experimente mit den zwei \\
-Faktoren \textit{Konzentration} und \textit{Temperatur}
+Faktoren \textit{Konzentration} und \textit{Temperatur}\\
+
+% TODO Remove, just for layout purposes
+\vfill\null
+\columnbreak
 
 \subsection*{Zeitreihen}
 \pythoninline{from statsmodels.tsa.seasonal } \\
@@ -537,6 +561,10 @@ bei einer Fenstergrösse von 12 \\
 \pythoninline{seasonal_decompose(np.log(frame["Passengers"]),} \\ 
 \pythoninline{	model="add").resid.plot()} \\
 Residuen Plot von logarithmierten Daten anzeigen \\
+
+% TODO Remove, just for layout purposes
+\vfill\null
+\columnbreak
 
 \pythoninline{seasonal_decompose(frame["Passengers"], } \\ 
 \pythoninline{	model="mul").plot()} \\
