@@ -359,6 +359,13 @@ $P[\overline{X}_{150} \leq 168]$ falls $u = 164$, $\hat{o} = 10$ und $T \sim t_{
 \pythoninline{st.t.ppf(0.05, df=v)} \\
 Quantile einer T-Verteilung mit \textit{v} Freiheitsgrade
 
+\subsubsection*{F Verteilung}
+\pythoninline{st.f.cdf(x=F, dfn=DF_G, dfd=DF_E)}\\
+Kumulative Wahrscheinlichkeitsverteilung mit $F=\frac{MS_G}{MS_E}$, $DF_G = g - 1$, $DF_E = n - g$ und $n = m\cdot g$\\
+
+\pythoninline{st.f.ppf(q=0.95, dfn=DF_G, dfd=DF_E)}\\
+95\% Perzentil mit $DF_G = g - 1$, $DF_E = n - g$ und $n = m\cdot g$
+
 \subsubsection*{Generierung zufallsverteilter Zahlen}
 
 \pythoninline{st.norm.rvs(size=n)}\\
@@ -395,6 +402,10 @@ wenn $n=13$, $\sigma=0.024$ und $u=80.02$ \\
 \pythoninline{st.norm.interval(alpha=0.99, loc=31, } \\
 \pythoninline{	scale=6/np.sqrt(10))} \\
 99\% Vertrauensintervall falls $X \sim \mathcal{N}(31, 6 / \sqrt{10})$
+
+% TODO Remove, just for layout purposes
+\vfill\null
+\columnbreak
 
 \subsection*{Statistische Tests}
 \pythoninline{st.binom_test(x=3, n=5, p=0.5,} \\
