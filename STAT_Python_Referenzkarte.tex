@@ -29,7 +29,7 @@
 \begin{document}
 \begin{multicols*}{3}
 
-\subsection*{Häufig verwendete Bibliotheken}
+\subsection*{Hï¿½ufig verwendete Bibliotheken}
 \begin{python}
 import matplotlib.pyplot as plt
 import scipy.stats as st
@@ -52,7 +52,7 @@ Hilfetext einer Funktion anzeigen
 \pythoninline{np.square(2)}: Quadrat von Zahl berechen \\
 \pythoninline{np.abs(-45)}: Absolutwert einer Zahl berechnen \\
 \pythoninline{np.round(2.35, x)}: Zahl auf \textit{x} Nachkomastellen runden \\
-\pythoninline{np.log(100)}: Natürlicher Logarithmus berechnen \\
+\pythoninline{np.log(100)}: Natï¿½rlicher Logarithmus berechnen \\
 \pythoninline{np.log10(100)}: Logarithmus mit Basis 10 berechnen \\
 \pythoninline{np.prod(arr)}: Produkt der Zahlen von \textit{arr}
 
@@ -77,7 +77,7 @@ Werte der Quantile eines Datensatz anzeigen \\
 In diesem Beispiel die 2.5\%- und 97.5\%-Quantile \\
 
 \pythoninline{np.sum(arr > x)} \\
-Werte grösser als \textit{x} in einem Array zählen \\
+Werte grï¿½sser als \textit{x} in einem Array zï¿½hlen \\
 
 \pythoninline{arr = np.cumsum(arr)} \\
 Kumulative Summe des Array \textit{arr} berechnen\\
@@ -86,7 +86,7 @@ Kumulative Summe des Array \textit{arr} berechnen\\
 Mittelwert berechnen und NaN ignorieren \\
 
 \pythoninline{np.tile(arr, x)} \\
-Array \textit{x}-Mal wiederholen und aneinander hängen \\
+Array \textit{x}-Mal wiederholen und aneinander hï¿½ngen \\
 
 \pythoninline{np.repeat(["M1","M2","M3"], [x1, x2, x3])} \\
 Jeder Werte des Array mit Index $i$, $x_i$-mal wiederholen \\
@@ -97,19 +97,19 @@ Korrelationsmatrix berechnen
 \subsection*{Numpy Zufallszahlen}
 
 \pythoninline{arr = np.random.choice(arr, size=1000)} \\
-Neues Array mit der Grösse \textit{size} erstellen und zufällig \\
-mit Werten aus dem übergebenen Array befüllen \\
+Neues Array mit der Grï¿½sse \textit{size} erstellen und zufï¿½llig \\
+mit Werten aus dem ï¿½bergebenen Array befï¿½llen \\
 
 \pythoninline{arr = np.arange(1, 25)} \\
 \pythoninline{np.random.choice(arr, 24, replace=False)} \\
-Zahlen zufällig sortieren \\
+Zahlen zufï¿½llig sortieren \\
 In diesem Beispiel die Zahlen 1 bis 24 \\
 
 \pythoninline{np.random.seed(35)} \\
 Zufallszahlengenerator mit einem Wert initialisieren \\
 
 \pythoninline{np.random.seed()} \\
-Wert des Zufallszahlengenerator wieder löschen \\
+Wert des Zufallszahlengenerator wieder lï¿½schen \\
 
 \pythoninline{np.random.normal(size=1000)} \\
 \textit{size} Standard-Normalverteilte Zufallszahlen generieren
@@ -147,11 +147,11 @@ Quartilsdifferenz von series berechnen
 
 \subsection*{Werte einlesen}
 \pythoninline{np.loadtxt(r"./data.txt")} \\
-Daten für ein Array aus einem Textfile laden \\
+Daten fï¿½r ein Array aus einem Textfile laden \\
 
 \pythoninline{frame = pd.read_csv(r"./data.csv", } \\
 \pythoninline{	sep=",", index_col=0)} \\
-Werte für eine Frame aus einem CSV auslesen \\
+Werte fï¿½r eine Frame aus einem CSV auslesen \\
 
 \pythoninline{pd.read_table(r"./gamma.txt", } \\
 \pythoninline{	delim_whitespace=True)} \\
@@ -175,8 +175,9 @@ frame = pd.DataFrame({
 \pythoninline{frame.mean(axis=1)}: Durchschnitt pro Zeile berechnen \\
 \pythoninline{frame.head(n)}: Erste \textit{n} Zeilen des Frames anzeigen \\
 \pythoninline{frame.tail(n)}: Letzte \textit{n} Zeilen des Frames anzeigen \\
-\pythoninline{frame.drop(x, 0)}: Zeile mit dem Index \textit{x} löschen \\
-\pythoninline{frame.drop(x, 1)}: Spalte \textit{x} löschen \\
+\pythoninline{frame.index}: Zeilenbeschriftung des Frames anzeigen \\
+\pythoninline{frame.drop(x, 0)}: Zeile mit dem Index \textit{x} lï¿½schen \\
+\pythoninline{frame.drop(x, 1)}: Spalte \textit{x} lï¿½schen \\
 \pythoninline{frame.corr()}: Korrelationsmatrix berechnen
 
 \subsection*{Umgang mit DataFrame}
@@ -187,7 +188,7 @@ Kopie eines DataFrame erstellen \\
 Auf einen Bereiche in einem DataFrame zugreifen \\
 
 \pythoninline{frame.loc[["mar","mai"],["Basel","Zuerich"]]} \\
-Auf ausgewählt Elemente in einem DataFrame zugreifen \\
+Auf ausgewï¿½hlt Elemente in einem DataFrame zugreifen \\
 
 \pythoninline{frame.sort_values(by='Luzern', ascending=False)} \\
 Daten im Frame nach einer Spalte sortieren \\
@@ -195,7 +196,7 @@ Daten im Frame nach einer Spalte sortieren \\
 \pythoninline{frame.nsmallest(n, 'Luzern')} \\
 \pythoninline{frame.nlargest(n, 'Luzern')} \\
 Daten im Frame nach einer Spalte sortieren und dann \\ 
-\textit{n} Zeilen mit grösstem oder kleinstem Werte zurückgeben \\
+\textit{n} Zeilen mit grï¿½sstem oder kleinstem Werte zurï¿½ckgeben \\
 
 \pythoninline{filtered = frame[frame['Luzern'] == 0]} \\
 Daten anhand des Wertes einer Spalte filtern
@@ -203,9 +204,9 @@ Daten anhand des Wertes einer Spalte filtern
 \pythoninline{mean = frame.mean()['Luzern']} \\
 \pythoninline{frame.loc[frame['Luzern'] < mean, 2:5]} \\
 Daten anhand des Wertes einer Spalte filtern und die \\
-Zeilen einschränken (in diesem Beispiel 2 bis 5)
+Zeilen einschrï¿½nken (in diesem Beispiel 2 bis 5)
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame fï¿½r die nï¿½chsten Befehle}},colframe=black!4!white,coltitle=black]
 	\begin{python}
 df=DataFrame({
   "Behandlung": np.repeat(
@@ -235,8 +236,8 @@ Auf die Werte der Gruppe zugreifen
 \pythoninline{plt.subplot(nrows=2, ncols=3, index=4)} \\
 \pythoninline{plt.subplot(234)} \\
 Sub-Plot mit 2 Zeilen und 3 Spalten erstellen und den \\ 
-nächsten Plot an der Position 4 einfügen. Die Position wird \\
-von links nach rechts und dann von oben nach unten gezählt
+nï¿½chsten Plot an der Position 4 einfï¿½gen. Die Position wird \\
+von links nach rechts und dann von oben nach unten gezï¿½hlt
 
 \subsection*{Plots erstellen}
 \pythoninline{series.hist(bins=[0, 1, 10, 11, 12])} \\
@@ -249,7 +250,7 @@ Histogramm erstellen und Balken mit Farbe umrahmen \\
 Normiertes Histogramm erstellen
 
 \pythoninline{plt.hist(series.T, bins=20, density=True)} \\
-Plotten eines Histograms mit der Fläche 1 \\
+Plotten eines Histograms mit der Flï¿½che 1 \\
 
 \pythoninline{series.plot(kind="hist", bins=20, ...)} \\
 Anzahl Klassen des Histogramm manuell festlegen \\
@@ -265,8 +266,8 @@ Boxplot von \textit{series} erstellen und Titel des Plots festlegen \\
 Daten gruppieren und durch einen Boxplot anzeigen
 
 \pythoninline{frame.plot(kind='scatter', x='wine', y='mor')} \\
-Streudiagramm mit zwei ausgewählten Achsen erstellen \\
-Parameter \textit{x} und \textit{y} müssen auf Indizes des \textit{frame} verweisen \\
+Streudiagramm mit zwei ausgewï¿½hlten Achsen erstellen \\
+Parameter \textit{x} und \textit{y} mï¿½ssen auf Indizes des \textit{frame} verweisen \\
 
 \pythoninline{b, a = np.polyfit(x_series, y_series, deg=1)} \\
 \pythoninline{x = np.linspace(x_series.min(), x_series.max())} \\
@@ -283,7 +284,7 @@ Kurve der Funktion f(t) im Intervall [\pythoninline{start,stop}] plotten
 
 \subsection*{Mehrere DataFrame Plots in einem MatPlotLib}
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{Struktur der Daten für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{Struktur der Daten fï¿½r die nï¿½chsten Befehle}},colframe=black!4!white,coltitle=black]
 	\begin{verbatim}
 	"high" "medium" "low"
 	0.71 2.2 2.25
@@ -316,7 +317,7 @@ plt.show()
 
 \pythoninline{st.uniform.cdf(x=1, loc=4, scale=5)} \\
 $P(X \leq 1)$ falls $X \sim Unif(4, 9)$ \\
-\colorbox{red!20!white}{\pythoninline{scale} ist nicht Endwert, sondern Länge des Intervall}\\
+\colorbox{red!20!white}{\pythoninline{scale} ist nicht Endwert, sondern Lï¿½nge des Intervall}\\
 
 \pythoninline{st.uniform.pdf(x=1, loc=0, scale=7)} \\
 Dichte an der Stelle \textit{x} = 1 falls $X \sim Unif(0, 7)$
@@ -354,7 +355,7 @@ $P(X \leq 1.5)$ falls $X \sim \mathcal{N}(0, 1^2)$
 
 \pythoninline{st.t.cdf(x=168, df=149, loc=164, } \\
 \pythoninline{	scale=10/np.sqrt(150))} \\
-$P[\overline{X}_{150} \leq 168]$ falls $u = 164$, $\hat{o} = 10$ und $T \sim t_{149}$ (150 Messungen - 1 geschätzter Parameter) \\
+$P[\overline{X}_{150} \leq 168]$ falls $u = 164$, $\hat{o} = 10$ und $T \sim t_{149}$ (150 Messungen - 1 geschï¿½tzter Parameter) \\
 
 \pythoninline{st.t.ppf(0.05, df=v)} \\
 Quantile einer T-Verteilung mit \textit{v} Freiheitsgrade
@@ -386,12 +387,12 @@ generiert \textit{n} chi-verteilte Zahlen mit \textit{v} Freiheitsgrade
 \pythoninline{ans, _ = quad(f, 0, 60)} \\
 In diesem Fall das Integral: $\int_{0}^{60} x * (15 - \frac{x}{4})$
 
-\subsection*{Gleichung lösen}
+\subsection*{Gleichung lï¿½sen}
 \pythoninline{from sympy.solvers import solve} \\
 \pythoninline{from sympy import Symbol} \\
 \pythoninline{x = Symbol('x')} \\
 \pythoninline{solve(x**2/9000 * (15/2 - x/12) - 0.9, x)} \\
-Löst die Gleichung: $\frac{x^2}{9000} (\frac{15}{2} - \frac{x}{12}) - 0.9 = 0$
+Lï¿½st die Gleichung: $\frac{x^2}{9000} (\frac{15}{2} - \frac{x}{12}) - 0.9 = 0$
 
 \subsection*{Vertrauensintervall}
 \pythoninline{st.t.interval(alpha=0.95, df=12, loc=80.02, } \\
@@ -428,17 +429,17 @@ Angabe der Alternativhypothese. Der Standardwert ist 'two-sided'.\\
 Auf den p-Value des Wilcoxontests zugreifen\\
 
 \pythoninline{st.ttest_rel(series1, series2)} \\
-Statistischer Test für gepaarte Stichproben  \\
+Statistischer Test fï¿½r gepaarte Stichproben  \\
 
 \pythoninline{st.ttest_ind(series1, series2, equal_var=False)} \\
-Statistischer Test für ungepaarte Stichproben  \\
+Statistischer Test fï¿½r ungepaarte Stichproben  \\
 
 \pythoninline{st.mannwhitneyu(series1, series2,}\\
 \pythoninline{	alternative='two-sided')} \\
 Mann-Whitney U-Test (aka Wilcoxon Rank-sum Test) \\
 
 \pythoninline{st.ttest_1samp(series, 1).pvalue} \\
-P-Wert eines T-Tests für eine Series berechnen \\
+P-Wert eines T-Tests fï¿½r eine Series berechnen \\
 mit der Nullhypothese $u=1$ \\
 \colorbox{red!20!white}{\pythoninline{pvalue} ist der P-Wert des zweiseitigen Tests}\\
 
@@ -448,7 +449,7 @@ mit der Nullhypothese $u=1$ \\
 \pythoninline{from statsmodels.stats.anova import anova_lm} \\
 \pythoninline{from statsmodels.formula.api import ols} \\
 \pythoninline{from patsy.contrasts import Sum} \\
-Benötigte Bibliotheksfunktionen für Varianzanalysen
+Benï¿½tigte Bibliotheksfunktionen fï¿½r Varianzanalysen
 
 \pythoninline{sns.stripplot(x="...", y="...", data=frame)} \\
 Varianz-Analyse mit Stripcharts zwischen \textit{x} und \textit{y} \\
@@ -464,11 +465,11 @@ F-Statistik plotten \\
 \pythoninline{sns.boxplot(series.index.month, series)} \\
 \pythoninline{sns.boxplot(series.index.quarter, series)} \\
 \pythoninline{sns.boxplot(series.index.year, series)} \\
-Boxplot für gruppierte Daten nach Wochentag, Monat, \\
+Boxplot fï¿½r gruppierte Daten nach Wochentag, Monat, \\
 Quartal, Jahr, ... anzeigen \\
 \colorbox{red!20!white}{\pythoninline{series} muss ein DatetimeIndex haben}\\
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame fï¿½r die nï¿½chsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{python}
 frame = pd.DataFrame({
   "Treatment": np.repeat(["Vak","CO2"], 3),
@@ -480,16 +481,16 @@ frame = pd.DataFrame({
 \pythoninline{fit = ols("steak_id~Treatment", data=frame).fit()} \\
 \pythoninline{fit.summary()} \\
 Gruppenmittelmodell berechnen zwischen der Id des \\ 
-Steaks und der ausgeführten Behandlung \\
+Steaks und der ausgefï¿½hrten Behandlung \\
 
 \pythoninline{fit_pred = fit.get_prediction()} \\
 \pythoninline{fit_pred.conf_int()} \\
-Vertrauensintervalle für Gruppenmittelwerte \\
+Vertrauensintervalle fï¿½r Gruppenmittelwerte \\
 
 \pythoninline{anova_lm(fit)} \\
 Anova Tabelle berechnen
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame fï¿½r die nï¿½chsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{python}
 frame = pd.DataFrame({
   "Batch": np.tile(["1", "2", "3"], 4),
@@ -502,16 +503,16 @@ frame = pd.DataFrame({
 \pythoninline{interaction_plot(x=frame["Batch"], }\\
 \pythoninline{	trace=frame["Methode"], response=frame["Y"])} \\
 Interaktionsplot erstellen \\
-- entlang der y-Achse die Zielgrösse (response) \\
+- entlang der y-Achse die Zielgrï¿½sse (response) \\
 - entlang der x-Achse der durch x festgelegte Faktor \\
-- für jede Stufe in trace wird dann eine Linie gezogen \\
+- fï¿½r jede Stufe in trace wird dann eine Linie gezogen \\
 
 \pythoninline{formula = "Y ~ C(Methode, Sum) + C(Batch, Sum)"} \\
 \pythoninline{fit = ols(formula, data=frame).fit()} \\
-Zweiweg-Varianzanalyse mit Blöcken zwischen den \\
+Zweiweg-Varianzanalyse mit Blï¿½cken zwischen den \\
 Datenspalten \textit{Methode} und \textit{Batch} \\
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame fï¿½r die nï¿½chsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{python}
 frame = pd.DataFrame({
   "Konz": np.repeat(["A", "B", "C","D"], 6),
@@ -533,14 +534,14 @@ Faktoren \textit{Konzentration} und \textit{Temperatur}\\
 \subsection*{Zeitreihen}
 \pythoninline{from statsmodels.tsa.seasonal } \\
 \pythoninline{	import seasonal_decompose} \\
-Benötigte Bibliotheksfunktionen für Zeitreihen \\
+Benï¿½tigte Bibliotheksfunktionen fï¿½r Zeitreihen \\
 
 \pythoninline{def boxcox(x, lambd):} \\
 \pythoninline{	return np.log(x) if (lambd == 0) \} \\
 \pythoninline{		else (x**lambd - 1) / lambd} \\
 BoxCox-Funktion definieren \\
 
-\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
+\begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame fï¿½r die nï¿½chsten Befehle}},colframe=black!4!white,coltitle=black]
 \begin{verbatim}
     TravelDate  Passengers
 0   1/1/1949         112
@@ -562,12 +563,12 @@ Datums-Index einer Zeitreihe setzen \\
 
 \pythoninline{frame["Passengers"].rolling(window=12).mean()} \\
 Bewegendes Mittel (moving average) berechnen \\
-bei einer Fenstergrösse von 12 \\
+bei einer Fenstergrï¿½sse von 12 \\
 
 \pythoninline{seasonal_decompose(frame["Passengers"], } \\
 \pythoninline{	model="additive", freq=12).plot()} \\
 Zerlegen einer Zeitreihe in die verschiedenen Faktoren \\
-bei einer Fenstergrösse von 12 \\
+bei einer Fenstergrï¿½sse von 12 \\
 
 \pythoninline{seasonal_decompose(np.log(frame["Passengers"]),} \\ 
 \pythoninline{	model="add").resid.plot()} \\
@@ -583,7 +584,7 @@ Zerlegen einer Zeitreihe mit dem multiplikativen Modell \\
 
 \pythoninline{frame.resample("A").mean()} \\
 Zeitreihe so umformen, dass jede Zeile den \\
-Jahresdurchschnitt eines Jahres enthält
+Jahresdurchschnitt eines Jahres enthï¿½lt
 
 \subsection*{Allgemein}
 \pythoninline{from scipy.special import comb} \\
@@ -596,7 +597,7 @@ Python-Warnungen ausblenden \\
 
 \pythoninline{import matplotlib} \\
 \pythoninline{matplotlib.rcParams['figure.dpi'] = 150} \\
-Plot grösser machen (für High-DPI-Screens) \\
+Plot grï¿½sser machen (fï¿½r High-DPI-Screens) \\
 
 \pythoninline{%matplotlib inline} \\
 Plots in Jupyter-Notebook direkt anzeigen
