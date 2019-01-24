@@ -537,22 +537,22 @@ Faktoren \textit{Konzentration} und \textit{Temperatur}\\
 \pythoninline{	import seasonal_decompose} \\
 Benötigte Bibliotheksfunktionen für Zeitreihen \\
 
-\pythoninline{def boxcox(x, lambd):} \\
-\pythoninline{	return np.log(x) if (lambd == 0) \} \\
-\pythoninline{		else (x**lambd - 1) / lambd} \\
-BoxCox-Funktion definieren \\
-
 \begin{tcolorbox}[boxrule=1pt,colback=black!4!white, title=\underline{\textbf{DataFrame für die nächsten Befehle}},colframe=black!4!white,coltitle=black]
-\begin{verbatim}
-    TravelDate  Passengers
-0   1/1/1949         112
-1   2/1/1949         118
-2   3/1/1949         132
-3   4/1/1949         129
-4   5/1/1949         121
-.   ........         ...
-\end{verbatim}
+	\begin{verbatim}
+	TravelDate  Passengers
+	0   1/1/1949         112
+	1   2/1/1949         118
+	2   3/1/1949         132
+	3   4/1/1949         129
+	4   5/1/1949         121
+	.   ........         ...
+	\end{verbatim}
 \end{tcolorbox}
+
+\pythoninline{def boxcox(frame, lambd):} \\
+\pythoninline{	return np.log(frame) if (lambd == 0)\} \\
+\pythoninline{		else (frame**lambd - 1) / lambd} \\
+BoxCox-Funktion definieren \\
 
 \pythoninline{series = frame["Passengers"].shift(-5)} \\
 Zeitverschiebung (shifting) mit $k = -5$ \\
