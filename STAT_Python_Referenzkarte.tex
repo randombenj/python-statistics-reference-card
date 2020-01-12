@@ -43,7 +43,7 @@ import numpy as np
 Hilfetext eines Packages anzeigen \\
 
 \pythoninline{help(np.random.choice)} \\
-Hilfetext einer Funktion anzeigen 
+Hilfetext einer Funktion anzeigen
 
 \subsection*{Numpy Basics}
 \pythoninline{np.e}: Konstante mit Wert von $e$ \\
@@ -167,11 +167,11 @@ frame = pd.DataFrame({
 )
 \end{python}
 
-\pythoninline{frame.columns}: Spaltenname auslesen \\ 
+\pythoninline{frame.columns}: Spaltenname auslesen \\
 \pythoninline{frame.shape}: Anzahl Zeilen und Spalten des Frames \\
-\pythoninline{frame.T}: Zeilen und Spalten vertauschen \\ 
+\pythoninline{frame.T}: Zeilen und Spalten vertauschen \\
 \pythoninline{frame.describe()}: Kennzahlen jeder Spalte anzeigen \\
-\pythoninline{frame.mean(axis=0)}: Durchschnitt pro Spalte berechnen \\ 
+\pythoninline{frame.mean(axis=0)}: Durchschnitt pro Spalte berechnen \\
 \pythoninline{frame.mean(axis=1)}: Durchschnitt pro Zeile berechnen \\
 \pythoninline{frame.head(n)}: Erste \textit{n} Zeilen des Frames anzeigen \\
 \pythoninline{frame.tail(n)}: Letzte \textit{n} Zeilen des Frames anzeigen \\
@@ -195,7 +195,7 @@ Daten im Frame nach einer Spalte sortieren \\
 
 \pythoninline{frame.nsmallest(n, 'Luzern')} \\
 \pythoninline{frame.nlargest(n, 'Luzern')} \\
-Daten im Frame nach einer Spalte sortieren und dann \\ 
+Daten im Frame nach einer Spalte sortieren und dann \\
 \textit{n} Zeilen mit grösstem oder kleinstem Werte zurückgeben \\
 
 \pythoninline{filtered = frame[frame['Luzern'] == 0]} \\
@@ -235,7 +235,7 @@ Auf die Werte der Gruppe zugreifen
 
 \pythoninline{plt.subplot(nrows=2, ncols=3, index=4)} \\
 \pythoninline{plt.subplot(234)} \\
-Sub-Plot mit 2 Zeilen und 3 Spalten erstellen und den \\ 
+Sub-Plot mit 2 Zeilen und 3 Spalten erstellen und den \\
 nächsten Plot an der Position 4 einfügen. Die Position wird \\
 von links nach rechts und dann von oben nach unten gezählt
 
@@ -252,7 +252,7 @@ Normiertes Histogramm erstellen, bzw. Fläche des Histogramms auf eins normieren\
 \pythoninline{series.plot(kind="hist", bins=20, ...)} \\
 Anzahl Klassen des Histogramm manuell festlegen \\
 
-\pythoninline{series.plot(kind='hist', cumulative=True, 
+\pythoninline{series.plot(kind='hist', cumulative=True,
 	histtype='step', density=True)} \\
 Empirische kumulative Verteilungsfunktion plotten \\
 
@@ -425,7 +425,7 @@ Berechnet den Wilcoxon Vorzeichenrangtest der Differenz zwischen den beiden Seri
 
 \pythoninline{st.wilcoxon(arr, zero_method="wilcox",}\\
 \pythoninline{	correction=True)}
-Berechnet den Wilcoxon Vorzeichenrangtest, erwartet das \pythoninline{arr} schon die Differenz zweier Serien beinhaltet 
+Berechnet den Wilcoxon Vorzeichenrangtest, erwartet das \pythoninline{arr} schon die Differenz zweier Serien beinhaltet
 \vspace{0.5em}\\
 \pythoninline{zero_method} : \{"pratt", "wilcox", "zsplit"\}, \textbf{optional}\\
 "wilcox": Wilcox treatment: discards all zero-differences
@@ -466,7 +466,7 @@ Varianz-Analyse mit Stripcharts zwischen \textit{x} und \textit{y} \\
 \pythoninline{sns.boxplot(x="...", y="...", data=frame)} \\
 Varianz-Analyse mit Boxplots zwischen \textit{x} und \textit{y} \\
 
-\pythoninline{sns.distplot(Fstat, kde=False, norm_hist=True, 
+\pythoninline{sns.distplot(Fstat, kde=False, norm_hist=True,
 	hist_kws=dict(edgecolor="black", linewidth=2))} \\
 F-Statistik plotten \\
 
@@ -486,10 +486,10 @@ frame = pd.DataFrame({
 })
 \end{python}
 \end{tcolorbox}
- 
+
 \pythoninline{fit = ols("steak_id~Treatment", data=frame).fit()} \\
 \pythoninline{fit.summary()} \\
-Gruppenmittelmodell berechnen zwischen der Id des \\ 
+Gruppenmittelmodell berechnen zwischen der Id des \\
 Steaks und der ausgeführten Behandlung \\
 
 \pythoninline{fit_pred = fit.get_prediction()} \\
@@ -540,6 +540,7 @@ Faktoren \textit{Konzentration} und \textit{Temperatur}\\
 \vfill\null
 \columnbreak
 
+
 \subsection*{Zeitreihen}
 \pythoninline{from statsmodels.tsa.seasonal } \\
 \pythoninline{	import seasonal_decompose} \\
@@ -579,7 +580,7 @@ bei einer Fenstergrösse von 12 \\
 Zerlegen einer Zeitreihe in die verschiedenen Faktoren \\
 bei einer Fenstergrösse von 12 \\
 
-\pythoninline{seasonal_decompose(np.log(frame["Passengers"]),} \\ 
+\pythoninline{seasonal_decompose(np.log(frame["Passengers"]),} \\
 \pythoninline{	model="add").resid.plot()} \\
 Residuen Plot von logarithmierten Daten anzeigen \\
 
@@ -587,13 +588,49 @@ Residuen Plot von logarithmierten Daten anzeigen \\
 \vfill\null
 \columnbreak
 
-\pythoninline{seasonal_decompose(frame["Passengers"], } \\ 
+\pythoninline{seasonal_decompose(frame["Passengers"], } \\
 \pythoninline{	model="mul").plot()} \\
 Zerlegen einer Zeitreihe mit dem multiplikativen Modell \\
 
 \pythoninline{frame.resample("A").mean()} \\
 Zeitreihe so umformen, dass jede Zeile den \\
 Jahresdurchschnitt eines Jahres enthält
+
+\subsection*{Autoregressive Modelle}
+
+\pythoninline{from statsmodels.graphics.tsaplot } \\
+\pythoninline{	import plot_acf, plot_pacf} \\
+\pythoninline{from statsmodels.tsa.arima_model} \\
+\pythoninline{	import ARMA, ArmaProcess} \\
+Benötigte Bibliotheksfunktionen für Autoregressive Modelle
+
+\pythoninline{plot_acf(frame, lags=50)} \\
+Prüft ob ein Autoregressives modell angebracht ist \\
+
+\pythoninline{plot_pacf(frame, lags=50)} \\
+Findet den parameter $p$ heraus (grösste nicht im \\
+Weissen Rauschen verschwindender Wert) \\
+
+\pythoninline{model = ARMA(frame, order=(p, 0).fit()} \\
+Erstellt ein autoregressives Modell mit parameter $p$ \\
+
+\pythoninline{frame.plot()} \\
+\pythoninline{(frame["Passengers"] - model.resid).plot()} \\
+Vergleich zwischen Daten und Modell \\
+
+\pythoninline{fig, ax = plt.subplots()} \\
+\pythoninline{ax = frame.plot(ax=ax)} \\
+\pythoninline{model.plot_predict("start", "end",} \\
+\pythoninline{	dynamic=True, ax=ax, plot_insample=True)} \\
+Vorhersagen des Modells erstellen \\
+
+\pythoninline{process = ArmaProcess([a_1, a_2, ...], ma=[1])} \\
+Erstellen eines theoretischen autoregressiven Prozesses \\
+$a_n$, stellt die polynomialparameter dar \\
+
+% TODO Remove, just for layout purposes
+\vfill\null
+\columnbreak
 
 \subsection*{Allgemein}
 \pythoninline{from scipy.special import comb} \\
