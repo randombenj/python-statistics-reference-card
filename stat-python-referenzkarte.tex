@@ -272,8 +272,9 @@ Parameter \textit{x} und \textit{y} müssen auf Indizes des \textit{frame} verwei
 Plotten einer Regressionsgerade, bei welcher die Daten \\
 einem Polynom ersten Grades angeglichen wurden \\
 
-\pythoninline{st.probplot(arr, plot=plt)} \\
-QQ-Plot anhand einer Normalverteilung\\
+\pythoninline{st.probplot(arr, dist="norm" plot=plt)} \\
+QQ-Plot anhand einer Normalverteilung \\
+Die Verteilungsart kann mit dem \textit{dist} bestimmt werden \\
 
 \pythoninline{t = np.linspace(start, stop, amount_of_numbers)}\\
 \pythoninline{plt.plot(t, f(t), linewidth=1.0)}\\
